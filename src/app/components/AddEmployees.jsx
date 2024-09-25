@@ -8,7 +8,7 @@ const AddEmployees = () => {
   const [empName, setEmpName] = useState('');
   const dispatch = useDispatch();
   const dataDispatch = () => {
-    console.log(empName)
+    // console.log(empName)
     dispatch(addEmployee(empName))
     setEmpName('');
   }

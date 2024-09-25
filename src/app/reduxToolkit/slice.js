@@ -1,4 +1,4 @@
-const {createSlice}=require("@reduxjs/toolkit");
+const {createSlice, nanoid}=require("@reduxjs/toolkit");
 
 const initialState={
     employees:[]
@@ -8,8 +8,9 @@ const Slice =createSlice({
     initialState,
     reducers:{
         addEmployee:(state,action)=>{
-            console.log(action)
+            // console.log(action)
             const data={
+                id: nanoid(),
                 name:action.payload
             }
             state.employees.push(data)
