@@ -3,7 +3,7 @@
 import { useSelector } from "react-redux";
 
 const ShowEmployees = () => {
-    const employeeData=useSelector((data)=>data.employees);
+    const employeeData=useSelector((data)=> data.employeeData.employees);
     // console.log("employeeData",employeeData)
   return (
     <div>
