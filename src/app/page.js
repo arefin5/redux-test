@@ -19,8 +19,7 @@ export default function Home() {
   console.log(lists)
   return (
     <>
-      <AddEmployees />
-      <ShowEmployees />
+      
     </>
   );
 }

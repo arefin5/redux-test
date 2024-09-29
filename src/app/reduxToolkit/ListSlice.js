@@ -1,3 +1,5 @@
+import axiosInstance from "../services/axiosInstance";
+
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialState = {
@@ -5,12 +7,15 @@ const initialState = {
     error: null,
     lists: [] // Handles lists only
 };
-
 export const apiData = createAsyncThunk("apidata", async () => {
-    const response = await fetch('http://localhost:5050/api/all-list');
-   console.log("response",response)
-   return response.json();
-});
+    const response = await axiosInstance.get('/all-list');
+    return response.data;
+  });
+// export const apiData = createAsyncThunk("apidata", async () => {
+//     const response = await fetch('http://localhost:5050/api/all-list');
+//    console.log("response",response)
+//    return response.json();
+// });
 
 const Slice = createSlice({
     name: 'listSlice', // Renamed for clarity
